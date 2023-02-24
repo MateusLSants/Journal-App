@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.dev.backend.domain.User;
 import com.dev.backend.repository.UserRepository;
 import com.dev.backend.requests.user.UserPostRequestBody;
+import com.dev.backend.requests.user.UserPutRequestBody;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,11 +19,11 @@ public class UserService {
     
     private final UserRepository repository;
 
-    public List<User> listAll() {
+    public List<User> findAll() {
         return repository.findAll();
     }
 
-    public User findById(long id) {
+    public User findByIdOrThrowBadRequestException(long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuario not found"));
     }
@@ -38,11 +39,20 @@ public class UserService {
     }
 
     public void delete(long id) {
-        repository.delete(findById(id));
+        repository.delete(findByIdOrThrowBadRequestException(id));
     }
 
-    public void replace(User user) {
+    public void replace(UserPutRequestBody userPutRequestBody) {
+        User savedUSer = findByIdOrThrowBadRequestException(userPutRequestBody.getId());
+        User user = User.builder()
+                    .id(savedUSer.getId())
+                    .name(userPutRequestBody.getName())
+                    .email(userPutRequestBody.getEmail())
+                    .password(userPutRequestBody.getPassword())
+                    .build();
+
         repository.save(user);
+
         
     }
 }
