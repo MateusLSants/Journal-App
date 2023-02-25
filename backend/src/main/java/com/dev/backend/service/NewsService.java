@@ -1,5 +1,6 @@
 package com.dev.backend.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -29,11 +30,13 @@ public class NewsService {
     }
     
     public News save(NewsPostRequestBody newsPostRequestBody) {
+        newsPostRequestBody.setDateCreated(new Date());
         News news = News.builder()
                     .title(newsPostRequestBody.getTitle())
                     .content(newsPostRequestBody.getContent())
+                    .author(newsPostRequestBody.getAuthor())
                     .dateCreated(newsPostRequestBody.getDateCreated())
-                    .dateUpdate(newsPostRequestBody.getDateUpdate())
+                    .dateUpadte(newsPostRequestBody.getDateUpadte())
                     .build();
 
         return repository.save(news);
@@ -45,12 +48,14 @@ public class NewsService {
 
     public void replace(NewsPutRequestBody newsPutRequestBody) {
         News savedNews = findByIdOrThrowBadRequestException(newsPutRequestBody.getId());
+        newsPutRequestBody.setDateUpadte(new Date());
         News news = News.builder()
                     .id(savedNews.getId())
                     .title(newsPutRequestBody.getTitle())
                     .content(newsPutRequestBody.getContent())
-                    .dateCreated(newsPutRequestBody.getDateCreated())
-                    .dateUpdate(newsPutRequestBody.getDateUpdate())
+                    .author(newsPutRequestBody.getAuthor())
+                    .dateCreated(savedNews.getDateCreated())
+                    .dateUpadte(newsPutRequestBody.getDateUpadte())
                     .build();
 
         repository.save(news);
