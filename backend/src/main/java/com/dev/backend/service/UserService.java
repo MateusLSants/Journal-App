@@ -25,7 +25,7 @@ public class UserService {
 
     public User findByIdOrThrowBadRequestException(long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuario not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User not found"));
     }
 
     public User save(UserPostRequestBody userPostRequestBody) {
