@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.dev.backend.domain.User;
+import com.dev.backend.mapper.UserMapper;
 import com.dev.backend.repository.UserRepository;
 import com.dev.backend.requests.user.UserPostRequestBody;
 import com.dev.backend.requests.user.UserPutRequestBody;
@@ -29,13 +30,7 @@ public class UserService {
     }
 
     public User save(UserPostRequestBody userPostRequestBody) {
-        User user = User.builder()
-                    .name(userPostRequestBody.getName())
-                    .email(userPostRequestBody.getEmail())
-                    .password(userPostRequestBody.getPassword())
-                    .build();
-
-        return repository.save(user);
+        return repository.save(UserMapper.INSTANCE.toUser(userPostRequestBody));
     }
 
     public void delete(long id) {
@@ -44,13 +39,8 @@ public class UserService {
 
     public void replace(UserPutRequestBody userPutRequestBody) {
         User savedUSer = findByIdOrThrowBadRequestException(userPutRequestBody.getId());
-        User user = User.builder()
-                    .id(savedUSer.getId())
-                    .name(userPutRequestBody.getName())
-                    .email(userPutRequestBody.getEmail())
-                    .password(userPutRequestBody.getPassword())
-                    .build();
-
+        User user = UserMapper.INSTANCE.toUser(userPutRequestBody);
+        user.setId(savedUSer.getId());
         repository.save(user);
 
         
