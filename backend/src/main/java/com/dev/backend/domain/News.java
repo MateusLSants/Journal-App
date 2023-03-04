@@ -30,7 +30,7 @@ public class News {
     private Long id;
     private String title;
     @Lob
-    @Column(name = "content", columnDefinition = "  BLOB")
+    @Column(name = "content", columnDefinition = "BLOB")
     private String content;
     @ManyToOne
     private User author;
