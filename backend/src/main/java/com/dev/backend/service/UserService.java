@@ -2,11 +2,10 @@ package com.dev.backend.service;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.dev.backend.domain.User;
+import com.dev.backend.exception.BadRequestException;
 import com.dev.backend.mapper.UserMapper;
 import com.dev.backend.repository.UserRepository;
 import com.dev.backend.requests.user.UserPostRequestBody;
@@ -26,7 +25,7 @@ public class UserService {
 
     public User findByIdOrThrowBadRequestException(long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User not found"));
+                .orElseThrow(() -> new BadRequestException("User not found"));
     }
 
     public User save(UserPostRequestBody userPostRequestBody) {

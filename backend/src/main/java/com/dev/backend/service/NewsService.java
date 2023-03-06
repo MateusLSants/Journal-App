@@ -3,11 +3,10 @@ package com.dev.backend.service;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.dev.backend.domain.News;
+import com.dev.backend.exception.BadRequestException;
 import com.dev.backend.mapper.NewsMapper;
 import com.dev.backend.repository.NewsRepository;
 import com.dev.backend.requests.news.NewsPostRequestBody;
@@ -27,7 +26,7 @@ public class NewsService {
 
     public News findByIdOrThrowBadRequestException(long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "News not found"));             
+                .orElseThrow(() -> new BadRequestException("News not found"));             
     }
     
     public News save(NewsPostRequestBody newsPostRequestBody) {
