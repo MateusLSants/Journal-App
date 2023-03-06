@@ -18,6 +18,7 @@ import com.dev.backend.requests.user.UserPostRequestBody;
 import com.dev.backend.requests.user.UserPutRequestBody;
 import com.dev.backend.service.UserService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -38,7 +39,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> save(@RequestBody UserPostRequestBody userPostRequestBody) {
+    public ResponseEntity<User> save(@RequestBody @Valid UserPostRequestBody userPostRequestBody) {
         return new ResponseEntity<>(services.save(userPostRequestBody), HttpStatus.CREATED);
     }
 
