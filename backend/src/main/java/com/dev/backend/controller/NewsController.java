@@ -18,6 +18,7 @@ import com.dev.backend.requests.news.NewsPostRequestBody;
 import com.dev.backend.requests.news.NewsPutRequestBody;
 import com.dev.backend.service.NewsService;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -38,7 +39,7 @@ public class NewsController {
     }
 
     @PostMapping
-    public ResponseEntity<News> save(@RequestBody NewsPostRequestBody newsPostRequestBody) {
+    public ResponseEntity<News> save(@RequestBody @Valid NewsPostRequestBody newsPostRequestBody) {
         return new ResponseEntity<>(services.save(newsPostRequestBody), HttpStatus.CREATED);
     }
 
