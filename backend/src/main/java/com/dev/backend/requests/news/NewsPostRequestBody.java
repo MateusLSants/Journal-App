@@ -1,7 +1,5 @@
 package com.dev.backend.requests.news;
 
-
-
 import java.util.Date;
 
 import com.dev.backend.domain.User;
