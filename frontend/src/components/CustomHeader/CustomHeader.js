@@ -7,6 +7,7 @@ function CustomHeader() {
             <nav>
                 <label className="logo">Journal App</label>
                 <ul>
+                    
                     <input type={Text} placeholder="Search"></input>
                 </ul> 
             </nav>

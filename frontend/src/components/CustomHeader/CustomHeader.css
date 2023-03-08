@@ -37,4 +37,18 @@ nav ul  {
     margin-right: 40px;
 }
 
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #a7140b;
+    color: white;
+}
+
+input:focus {
+    background-color: white;
+    border-color: transparent;
+    color: black;  
+}
+
 
