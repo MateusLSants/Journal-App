@@ -1,4 +1,5 @@
 import React from "react";
+import { HiOutlineSearch } from "react-icons/hi";
 import "./CustomHeader.css"
 
 function CustomHeader() {
@@ -6,9 +7,12 @@ function CustomHeader() {
         <body>
             <nav>
                 <label className="logo">Journal App</label>
-                <ul>
-                    
-                    <input type={Text} placeholder="Search"></input>
+                
+                <ul> 
+                    <input type={Text} placeholder="Search"/>
+                </ul>
+                <ul className="search-icon">
+                    <HiOutlineSearch color="white" className="icoSearch"/> 
                 </ul> 
             </nav>
         </body>
