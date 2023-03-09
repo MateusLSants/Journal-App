@@ -2,6 +2,7 @@ package com.dev.backend.service;
 
 import java.util.List;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.dev.backend.domain.User;
@@ -18,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class UserService {
     
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
     public List<User> findAll() {
         return repository.findAll();
@@ -29,6 +31,7 @@ public class UserService {
     }
 
     public User save(UserPostRequestBody userPostRequestBody) {
+        userPostRequestBody.setPassword(passwordEncoder.encode(userPostRequestBody.getPassword()));
         return repository.save(UserMapper.INSTANCE.toUser(userPostRequestBody));
     }
 
@@ -41,7 +44,5 @@ public class UserService {
         User user = UserMapper.INSTANCE.toUser(userPutRequestBody);
         user.setId(savedUSer.getId());
         repository.save(user);
-
-        
     }
 }
