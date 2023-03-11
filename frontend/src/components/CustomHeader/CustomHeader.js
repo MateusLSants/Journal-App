@@ -14,36 +14,29 @@ function hideOrShow() {
 }
 
 function CustomHeader() {
-    return(
-        <body>
-            <div>
-                <nav>
-                    <button className="btn-button-side-bar"
-                    type="button"
-                    onClick={hideOrShow}>
-                        <HiMenu size={"20px"}/>
-                    </button>
-
-                    <div id="side-bar-menu">
-                        <div className="links-side-bar-menu">
-                           <a href="/">home</a>
-                           <a href="users">users</a>
-                           <a href="news">news</a>
-                        </div>
-                    </div>
-
-                    
-                    <label className="logo">Journal App</label>
-                    <ul> 
-                        <input type={Text} placeholder="Search"/>
-                    </ul>
-                    <ul className="search-icon">
-                        <HiOutlineSearch color="white"/> 
-                    </ul> 
-                </nav>
+    return(       
+        <nav>
+            <button className="btn-button-side-bar"
+            type="button"
+            onClick={hideOrShow}>
+                <HiMenu size={"20px"}/>
+            </button>
+            <div id="side-bar-menu">
+                <div className="links-side-bar-menu">
+                   <a href="/">home</a>
+                   <a href="users">users</a>
+                   <a href="news">news</a>
+                </div>
             </div>
             
-        </body>
+            <label className="logo">Journal App</label>
+            <ul> 
+                <input type={Text} placeholder="Search"/>
+            </ul>
+            <ul className="search-icon">
+                <HiOutlineSearch color="white"/> 
+            </ul> 
+        </nav>
     )
 }
 

@@ -8,6 +8,7 @@
 
 body {
     font-family: montserrat;
+    gap: 3em;
 }
 
 nav {
@@ -16,6 +17,7 @@ nav {
     width: 100%;
     text-align: left;
     position: fixed;
+    box-shadow: black;
 }
 
 label.logo {

@@ -5,6 +5,12 @@ function App() {
   return (
     <div className="App">
       <CustomHeader></CustomHeader>
+      <body>
+        <div className='content'>
+          <h1>Notices</h1>
+        </div>
+      </body>
+    
     </div>
   );
 }
