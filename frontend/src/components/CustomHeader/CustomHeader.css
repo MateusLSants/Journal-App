@@ -15,6 +15,7 @@ nav {
     height: 80px;
     width: 100%;
     text-align: left;
+    position: fixed;
 }
 
 label.logo {
@@ -49,6 +50,55 @@ input {
 input:focus {
     background-color: white;
     border-color: transparent;
-    color: black; 
+    color: black;
+}
+
+.icon-menu {
+    padding-top: 30px;
+    float: left;
+}
+
+.btn-button-side-bar {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+#side-bar-menu {
+    background-color: #7a0b05;
+    width: 20%;
+    height: 100vh;
+    float: left;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    
+}
+
+.links-side-bar-menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-top: 30%;
+    color: white;
+    align-items: center;
+}
+
+a {
+   padding-top: 50px;
+   color: white;
+   font-size: 20px;
+}
+
+.btn-close-side-bar {
+   background-color: transparent;
+   border: none;
+   color: white;
+   font-size: 20px;
+   padding-top: 10%;
+   padding-left: 10%;
+   cursor: pointer;
 }
 
