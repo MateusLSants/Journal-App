@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.backend.domain.News;
-import com.dev.backend.requests.news.NewsPostRequestBody;
-import com.dev.backend.requests.news.NewsPutRequestBody;
+import com.dev.backend.domain.models.News;
+import com.dev.backend.domain.requests.news.NewsPostRequestBody;
+import com.dev.backend.domain.requests.news.NewsPutRequestBody;
 import com.dev.backend.service.NewsService;
 
 import jakarta.validation.Valid;

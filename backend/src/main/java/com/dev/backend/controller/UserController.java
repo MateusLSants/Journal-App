@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.backend.domain.User;
-import com.dev.backend.requests.user.UserPostRequestBody;
-import com.dev.backend.requests.user.UserPutRequestBody;
+import com.dev.backend.domain.models.User;
+import com.dev.backend.domain.requests.user.UserPostRequestBody;
+import com.dev.backend.domain.requests.user.UserPutRequestBody;
 import com.dev.backend.service.UserService;
 
 import jakarta.validation.Valid;

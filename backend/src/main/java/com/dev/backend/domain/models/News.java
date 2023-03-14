@@ -1,4 +1,4 @@
-package com.dev.backend.domain;
+package com.dev.backend.domain.models;
 
 
 import java.util.Date;

@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.dev.backend.domain.News;
+import com.dev.backend.domain.models.News;
+import com.dev.backend.domain.requests.news.NewsPostRequestBody;
+import com.dev.backend.domain.requests.news.NewsPutRequestBody;
 import com.dev.backend.exception.BadRequestException;
 import com.dev.backend.mapper.NewsMapper;
 import com.dev.backend.repository.NewsRepository;
-import com.dev.backend.requests.news.NewsPostRequestBody;
-import com.dev.backend.requests.news.NewsPutRequestBody;
 
 import lombok.RequiredArgsConstructor;
 

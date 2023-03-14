@@ -1,4 +1,4 @@
-package com.dev.backend.requests.user;
+package com.dev.backend.domain.requests.user;
 
 import lombok.Data;
 

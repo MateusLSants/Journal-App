@@ -1,8 +1,8 @@
-package com.dev.backend.requests.news;
+package com.dev.backend.domain.requests.news;
 
 import java.util.Date;
 
-import com.dev.backend.domain.User;
+import com.dev.backend.domain.models.User;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;

@@ -3,9 +3,9 @@ package com.dev.backend.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.dev.backend.domain.News;
-import com.dev.backend.requests.news.NewsPostRequestBody;
-import com.dev.backend.requests.news.NewsPutRequestBody;
+import com.dev.backend.domain.models.News;
+import com.dev.backend.domain.requests.news.NewsPostRequestBody;
+import com.dev.backend.domain.requests.news.NewsPutRequestBody;
 
 @Mapper(componentModel = "spring")
 public abstract class NewsMapper {

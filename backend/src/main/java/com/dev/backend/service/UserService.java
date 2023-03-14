@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.dev.backend.domain.User;
+import com.dev.backend.domain.models.User;
+import com.dev.backend.domain.requests.user.UserPostRequestBody;
+import com.dev.backend.domain.requests.user.UserPutRequestBody;
 import com.dev.backend.exception.BadRequestException;
 import com.dev.backend.mapper.UserMapper;
 import com.dev.backend.repository.UserRepository;
-import com.dev.backend.requests.user.UserPostRequestBody;
-import com.dev.backend.requests.user.UserPutRequestBody;
 
 import lombok.RequiredArgsConstructor;
 
